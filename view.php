@@ -3,6 +3,30 @@
 class View extends Laravel\View {
 
 	/**
+	 * Get the path to a given view on disk.
+	 *
+	 * @param  string  $view
+	 * @return string
+	 */
+	protected function path($view) {
+		$view = str_replace('.', '/', $view);
+
+		$root = Laravel\Bundle::path(Laravel\Bundle::name($view)).'views/';
+
+		// Use the ".mustache" extension for mustache files and the default bladed
+		// extension for compiled templates.
+		foreach (array('.mustache', BLADE_EXT) as $extension)
+		{
+			if (file_exists($path = $root.Laravel\Bundle::element($view).$extension))
+			{
+				return $path;
+			}
+		}
+
+		throw new \Exception("View [$view] does not exist.");
+	}
+
+	/**
 	 * Get the evaluated string content of the view.
 	 *
 	 * @return string
