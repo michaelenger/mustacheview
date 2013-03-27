@@ -7,8 +7,9 @@ Tiny bundle for [Laravel](http://laravel.com/) which allows you to use the [must
 Installing the bundle is done in 3 easy steps:
 
  1. Download the source
- 2. Register the bundle
- 3. Change the view alias
+ 2. Copy `Mustache` into `/bundles`
+ 3. Register the bundle
+ 4. Change the view alias
 
 ### Download
 
@@ -18,14 +19,12 @@ Download/clone the source into your __bundles__ directory.
 
 Register the bundle in your __application/bundles.php__ file.
 
-	'mustacheview' => array(
-		'autoloads' => array(
-			'map' => array(
-				'Mustache\\View' => '(:bundle)/view.php',
-				'Mustache\\Mustache' => '(:bundle)/mustache.php'
-			)
-		)
-	)
+	'Mustache' => array(
+	    'autoloads' => array(
+	        'namespaces' => array(
+	            'Mustache' => '(:bundle)'
+	        )
+	    )
 
 ### Change View Alias
 
