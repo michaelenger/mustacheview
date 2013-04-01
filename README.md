@@ -10,6 +10,7 @@ Installing the bundle is done in 3 easy steps:
  2. Copy `Mustache` into `/bundles`
  3. Register the bundle
  4. Change the view alias
+ 5. Bind Event listener
 
 ### Download
 
@@ -34,6 +35,12 @@ This view extends the Laravel\View class and replaces it to provide mustache fun
 		...
 		'View' => 'Mustache\\View',
 	)
+
+### Bind Event Listener
+
+In order to avoid modifying laravel's default view class more than necessary, Mustache will bind the the laravel.composing event. This also preserves support for blade.php files. Add the following to the end of your __applpication/start.php folder.
+
+	Mustache\Mustache::Comb();
 
 ## Usage
 
