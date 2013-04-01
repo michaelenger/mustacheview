@@ -38,7 +38,7 @@ This view extends the Laravel\View class and replaces it to provide mustache fun
 
 ### Bind Event Listener
 
-In order to avoid modifying laravel's default view class more than necessary, Mustache will bind the the laravel.composing event. This also preserves support for blade.php files. Add the following to the end of your __applpication/start.php file.
+In order to avoid modifying laravel's default view class more than necessary, Mustache will bind the the laravel.composing event. This also preserves support for blade.php files. Add the following to the end of your __application/start.php__ file.
 
 	Mustache\Mustache::Comb();
 
