@@ -26,6 +26,7 @@ Register the bundle in your __application/bundles.php__ file.
 	            'Mustache' => '(:bundle)'
 	        )
 	    )
+	)
 
 ### Change View Alias
 
